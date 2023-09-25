@@ -20,6 +20,7 @@ class TargetFocus {
     this.focusAnimationDuration,
     this.unFocusAnimationDuration,
     this.pulseVariation,
+    this.yOffset = 0,
   }) : assert(keyTarget != null || targetPosition != null);
 
   final dynamic identify;
@@ -37,6 +38,7 @@ class TargetFocus {
   final Duration? focusAnimationDuration;
   final Duration? unFocusAnimationDuration;
   final Tween<double>? pulseVariation;
+  final double yOffset;
 
   @override
   String toString() {

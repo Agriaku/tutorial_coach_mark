@@ -171,6 +171,7 @@ class TutorialCoachMarkWidgetState extends State<TutorialCoachMarkWidget>
     double? bottom;
     double? left;
     double? right;
+    final double yOffset = currentTarget?.yOffset ?? 0;
 
     children = currentTarget!.contents!.map<Widget>((i) {
       switch (i.align) {
@@ -178,7 +179,7 @@ class TutorialCoachMarkWidgetState extends State<TutorialCoachMarkWidget>
           {
             weight = MediaQuery.of(context).size.width;
             left = 0;
-            top = positioned.dy + haloHeight;
+            top = positioned.dy + haloHeight + yOffset;
             bottom = null;
           }
           break;
@@ -188,7 +189,7 @@ class TutorialCoachMarkWidgetState extends State<TutorialCoachMarkWidget>
             left = 0;
             top = null;
             bottom = haloHeight +
-                (MediaQuery.of(context).size.height - positioned.dy);
+                (MediaQuery.of(context).size.height - positioned.dy - yOffset);
           }
           break;
         case ContentAlign.left:
